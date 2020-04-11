@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_forum"
+        android:icon="@drawable/ic_forum_black_24dp"
+        android:title="@string/title_forums" />
+
+    <item
+        android:id="@+id/navigation_connections"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_connections" />
+
+    <item
+        android:id="@+id/navigation_my_profile"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="@string/title_my_profile" />
+
+</menu>
