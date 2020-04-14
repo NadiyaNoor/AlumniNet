@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class LoginActivity extends AppCompatActivity {
 
         EditText emailID, password;
-        Button btnSignIn;
+        Button btnLogIn;
         TextView tvSignUp;
         FirebaseAuth mFirebaseAuth;
         private FirebaseAuth.AuthStateListener mAuthStateListener;
@@ -34,7 +34,7 @@ protected void onCreate(Bundle savedInstanceState) {
         mFirebaseAuth = FirebaseAuth.getInstance();
         emailID = findViewById(R.id.email);
         password = findViewById(R.id.password);
-        btnSignIn = findViewById(R.id.loginbutton);
+        btnLogIn = findViewById(R.id.loginbutton);
         tvSignUp = findViewById(R.id.signupbutton);
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
@@ -54,7 +54,7 @@ protected void onCreate(Bundle savedInstanceState) {
                 }
         };
 
-        btnSignIn.setOnClickListener(new View.OnClickListener() {
+        btnLogIn.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {

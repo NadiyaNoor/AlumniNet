@@ -26,31 +26,25 @@ import com.google.firebase.database.core.Tag;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button button;
+
     // Write a message to the database
 
     EditText emailID, password;
     Button btnSignUp;
-    TextView tvSignIn;
+    TextView tvLogIn;
     FirebaseAuth mFirebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openNewActivity();
-            }
-        });
+
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         emailID = findViewById(R.id.email);
         password = findViewById(R.id.password);
         btnSignUp = findViewById(R.id.signupbutton);
-        tvSignIn = findViewById(R.id.loginbutton);
+        tvLogIn = findViewById(R.id.loginbutton);
         btnSignUp.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -85,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        tvSignIn.setOnClickListener(new View.OnClickListener() {
+        tvLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this,LoginActivity.class);
@@ -97,12 +91,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
-
-    // Open NavBar Page
-    public void openNewActivity(){
-        Intent intent = new Intent(this, NavBar.class);
-        startActivity(intent);
-    }
 }
