@@ -23,13 +23,13 @@ public class MyProfileFragment extends Fragment {
         myProfileViewModel =
                 ViewModelProviders.of(this).get(MyProfileViewModel.class);
         View root = inflater.inflate(R.layout.fragment_my_profile, container, false);
-        final TextView textView = root.findViewById(R.id.text_my_profile);
+        /*final TextView textView = root.findViewById(R.id.text_my_profile);
         myProfileViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
             }
-        });
+        });*/
         return root;
     }
 }
