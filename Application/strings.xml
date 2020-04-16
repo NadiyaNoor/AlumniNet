@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">AlumniNet</string>
-    <string name="title_activity_navbar">NavBar</string>
-    <string name="title_forums">Forums</string>
-    <string name="title_connections">Connections</string>
-    <string name="title_my_profile">My Profile</string>
-    <string name="vertical_ellipsis">&#8942;</string>
-    <string name="profile_picture_description">Profile picture</string>
-</resources>
