@@ -5,60 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <ListView
+            android:id="@+id/forumList"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="wrap_content">
+        </ListView>
 
-            <TextView
-                android:id="@+id/text_forum"
-                android:layout_width="match_parent"
-                android:layout_height="96dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="8dp"
-                android:text="This is the first forum"
-                android:textAlignment="center"
-                android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/text_forum2"
-                android:layout_width="match_parent"
-                android:layout_height="96dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="8dp"
-                android:text="This is the second forum"
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/text_forum3"
-                android:layout_width="match_parent"
-                android:layout_height="96dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="8dp"
-                android:text="This is the third forum"
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/text_forum4"
-                android:layout_width="match_parent"
-                android:layout_height="96dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="8dp"
-                android:text="This is the fourth forum"
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
