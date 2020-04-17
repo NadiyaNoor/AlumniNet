@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class ForumListAdapter extends ArrayAdapter<String> {
     Activity context;
     ArrayList<String> titleList = new ArrayList<>();
-    ArrayList<String> comments = new ArrayList<>();
+    ArrayList<String> descriptionList = new ArrayList<>();
 
     public ForumListAdapter(Activity context, ArrayList<String> titleList, ArrayList<String> descriptionList) {
         super(context, R.layout.activity_forum_item, titleList);
@@ -20,7 +20,7 @@ public class ForumListAdapter extends ArrayAdapter<String> {
 
         this.context = context;
         this.titleList = titleList;
-        this.comments = descriptionList;
+        this.descriptionList = descriptionList;
 
     }
 
@@ -32,7 +32,7 @@ public class ForumListAdapter extends ArrayAdapter<String> {
         TextView descriptionText = (TextView) rowView.findViewById(R.id.description);
 
         titleText.setText(titleList.get(position));
-        descriptionText.setText(comments.get(position));
+        descriptionText.setText(descriptionList.get(position));
 
         return rowView;
 

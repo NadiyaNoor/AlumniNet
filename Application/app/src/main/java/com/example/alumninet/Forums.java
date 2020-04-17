@@ -5,13 +5,23 @@ import androidx.annotation.NonNull;
 public class Forums {
     String title;
     String description;
+    String forumKey;
 
     public Forums(){
     }
 
-    public Forums(String title, String description){
+    public Forums(String title, String description){//, String forumKey){
         this.title = title;
         this.description = description;
+        //this.forumKey= forumKey;
+    }
+
+    public String getPostKey() {
+        return forumKey;
+    }
+
+    public void setPostKey(String postKey) {
+        this.forumKey = postKey;
     }
 
     public String getTitle() {
