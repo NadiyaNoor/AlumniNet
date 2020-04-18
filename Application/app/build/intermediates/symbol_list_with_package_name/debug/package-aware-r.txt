@@ -29,6 +29,7 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array my_array
 attr action
 attr actionBarDivider
 attr actionBarItemBackground
@@ -634,6 +635,7 @@ color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
 color colorAccent
+color colorButton
 color colorPrimary
 color colorPrimaryDark
 color common_google_signin_btn_text_dark
@@ -1122,6 +1124,7 @@ id async
 id auto
 id barrier
 id beginning
+id bio
 id blocking
 id bottom
 id buttonPanel
@@ -1151,6 +1154,9 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id drop1
+id drop2
+id drop3
 id edit_query
 id email
 id end
@@ -1176,6 +1182,8 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageView
+id imageView2
 id info
 id invisible
 id italic
@@ -1198,6 +1206,7 @@ id mobile_navigation
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id name
 id nav_controller_view_tag
 id nav_host_fragment
 id nav_view
@@ -1293,6 +1302,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id top
+id top3
 id topPanel
 id touch_outside
 id transition_current_scene
@@ -1304,6 +1314,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id username
 id view_offset_helper
 id visible
 id wide
@@ -1391,6 +1402,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu bottom_nav_menu
+mipmap aluminetlogo
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation mobile_navigation

@@ -4,6 +4,40 @@
     <string name="title_forums">Forums</string>
     <string name="title_connections">Connections</string>
     <string name="title_my_profile">My Profile</string>
+    <string-array name="my_array">
+        <item>Anthropology and Sociology</item>
+        <item>Art</item>
+        <item>Biology</item>
+        <item>Business and Management</item>
+        <item>Chemistry</item>
+
+        <item>Communications</item>
+        <item>Computer Science</item>
+        <item>Criminal Justice</item>
+        <item>Design</item>
+        <item>Economics</item>
+
+        <item>Education</item>
+        <item>Engineering</item>
+        <item>English</item>
+        <item>Environmental Science</item>
+        <item>Finance and Accounting</item>
+
+        <item>Foreign Languages</item>
+        <item>Health Professions</item>
+        <item>History</item>
+        <item>International Relations</item>
+        <item>Kinesiology and Physical Therapy</item>
+
+        <item>Math</item>
+        <item>Nursing</item>
+        <item>Political Science</item>
+        <item>Psychology</item>
+        <item>Trade and Personal Services</item>
+
+    </string-array>
+
     <string name="vertical_ellipsis">&#8942;</string>
     <string name="profile_picture_description">Profile picture</string>
+  
 </resources>
