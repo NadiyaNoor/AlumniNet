@@ -28,13 +28,21 @@
             android:layout_marginBottom="20dp"
             android:textSize="18sp" />
 
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginBottom="20dp"
+            android:textAlignment="viewEnd" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/comment"
+                android:id="@+id/editTextComment"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -42,7 +50,7 @@
                 android:textSize="18sp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnAddComment"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
