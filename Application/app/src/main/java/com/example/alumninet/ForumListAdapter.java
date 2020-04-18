@@ -7,20 +7,32 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.ArrayList;
 
 public class ForumListAdapter extends ArrayAdapter<String> {
     Activity context;
     ArrayList<String> titleList = new ArrayList<>();
-    ArrayList<String> comments = new ArrayList<>();
+    ArrayList<String> descriptionList = new ArrayList<>();
+    ArrayList<String> dateList = new ArrayList<>();
+    ArrayList<String> usernameList = new ArrayList<>();
+    ArrayList<String> forumKeyList = new ArrayList<>();
 
-    public ForumListAdapter(Activity context, ArrayList<String> titleList, ArrayList<String> descriptionList) {
+
+    public ForumListAdapter(Activity context, ArrayList<String> titleList,
+                            ArrayList<String> descriptionList, ArrayList<String> dateList,
+                            ArrayList<String> usernameList, ArrayList<String> forumKeyList) {
         super(context, R.layout.activity_forum_item, titleList);
         // TODO Auto-generated constructor stub
 
         this.context = context;
         this.titleList = titleList;
-        this.comments = descriptionList;
+        this.descriptionList = descriptionList;
+        this.dateList = dateList;
+        this.usernameList = usernameList;
+        this.forumKeyList = forumKeyList;
 
     }
 
@@ -30,9 +42,11 @@ public class ForumListAdapter extends ArrayAdapter<String> {
 
         TextView titleText = (TextView) rowView.findViewById(R.id.title);
         TextView descriptionText = (TextView) rowView.findViewById(R.id.description);
+        TextView username = (TextView) rowView.findViewById(R.id.date);
 
         titleText.setText(titleList.get(position));
-        descriptionText.setText(comments.get(position));
+        descriptionText.setText(descriptionList.get(position));
+        username.setText("Posted By: " + usernameList.get(position) + "\n" + dateList.get(position));
 
         return rowView;
 
