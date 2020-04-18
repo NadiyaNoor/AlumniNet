@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Daniel Green\\Documents\\GitHub\\AlumniNet\\Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
+            "outputFile": "C:\\Users\\green\\OneDrive\\Documents\\GitHub\\AlumniNet\\Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Daniel Green\\.gradle\\caches\\transforms-2\\files-2.1\\e8e80a55a1883b0fd50dc19e59e1ee48\\appcompat-1.0.2\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\green\\.gradle\\caches\\transforms-2\\files-2.1\\e8e80a55a1883b0fd50dc19e59e1ee48\\appcompat-1.0.2\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",
