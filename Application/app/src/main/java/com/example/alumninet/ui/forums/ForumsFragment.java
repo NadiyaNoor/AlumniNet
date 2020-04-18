@@ -26,6 +26,8 @@ import com.example.alumninet.ForumsActivity;
 import com.example.alumninet.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,14 +36,22 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 
 public class ForumsFragment extends Fragment {
 
     ListView listView;
-    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Forums");;
+    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Forums");
     ArrayList<String> titleList = new ArrayList<>();
     ArrayList<String> descriptionList = new ArrayList<>();
+    ArrayList<String> dateList = new ArrayList<>();
+    ArrayList<String> usernameList = new ArrayList<>();
+    ArrayList<String> forumKeyList = new ArrayList<>();
+
     ArrayAdapter<String> arrayAdapter;
+
+    FirebaseAuth firebaseAuth = firebaseAuth = FirebaseAuth.getInstance();;
+    FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -54,7 +64,8 @@ public class ForumsFragment extends Fragment {
 
         //databaseReference = FirebaseDatabase.getInstance().getReference("Forums");
         listView = root.findViewById(R.id.forumList);
-        arrayAdapter = new ForumListAdapter(getActivity(), titleList, descriptionList);
+        arrayAdapter = new ForumListAdapter(getActivity(), titleList, descriptionList,
+                dateList, usernameList, forumKeyList);
         listView.setAdapter(arrayAdapter);
 
         //title.setText();
@@ -64,11 +75,20 @@ public class ForumsFragment extends Fragment {
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 String title = dataSnapshot.getValue(Forums.class).getTitle();
                 String description = dataSnapshot.getValue(Forums.class).getDescription();
+                String date = dataSnapshot.getValue(Forums.class).getDate();
+                String username = dataSnapshot.getValue(Forums.class).getUsername();
+                String forumKey = dataSnapshot.getValue(Forums.class).getForumKey();
                 //String description = dataSnapshot.getValue(Forums.class).toString();
                 titleList.add(title);
                 descriptionList.add(description);
+                dateList.add(date);
+                usernameList.add(username);
+                forumKeyList.add(forumKey);
                 Collections.reverse(titleList);
                 Collections.reverse(descriptionList);
+                Collections.reverse(dateList);
+                Collections.reverse(usernameList);
+                Collections.reverse(forumKeyList);
                 arrayAdapter.notifyDataSetChanged();
 
 
@@ -78,11 +98,20 @@ public class ForumsFragment extends Fragment {
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 String title = dataSnapshot.getValue(Forums.class).getTitle();
                 String description = dataSnapshot.getValue(Forums.class).getDescription();
+                String date = dataSnapshot.getValue(Forums.class).getDate();
+                String username = dataSnapshot.getValue(Forums.class).getUsername();
+                String forumKey = dataSnapshot.getValue(Forums.class).getForumKey();
                 //String description = dataSnapshot.getValue(Forums.class).toString();
                 titleList.add(title);
                 descriptionList.add(description);
+                dateList.add(date);
+                usernameList.add(username);
+                forumKeyList.add(forumKey);
                 Collections.reverse(titleList);
                 Collections.reverse(descriptionList);
+                Collections.reverse(dateList);
+                Collections.reverse(usernameList);
+                Collections.reverse(forumKeyList);
                 arrayAdapter.notifyDataSetChanged();
             }
 
@@ -119,6 +148,9 @@ public class ForumsFragment extends Fragment {
 
                 intent.putExtra("Title", titleList.get(position));
                 intent.putExtra("Description", descriptionList.get(position));
+                intent.putExtra("Date", dateList.get(position));
+                intent.putExtra("Username", usernameList.get(position));
+                intent.putExtra("ForumKey", forumKeyList.get(position));
                 startActivity(intent);
 
             }
@@ -145,14 +177,15 @@ public class ForumsFragment extends Fragment {
 
                 builder.setView(layout);
 
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton("Post Forum", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Forums forum = new Forums(title.getText().toString(),
-                                description.getText().toString());
+                                description.getText().toString(),
+                                firebaseUser.getEmail());
                         addForum(forum);
 
-                        }
+                    }
                 });
 
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -176,10 +209,12 @@ public class ForumsFragment extends Fragment {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Forums").push();
+        Date date = new Date();
 
         // get post unique ID and update post key
         String key = myRef.getKey();
-        forum.setPostKey(key);
+        forum.setForumKey(key);
+        forum.setDate(date.toString());
 
 
         // add post data to firebase database
