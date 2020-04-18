@@ -13,10 +13,14 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.alumninet.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class ConnectionsFragment extends Fragment {
 
     private ConnectionsViewModel connectionsViewModel;
+    private DatabaseReference mDatabase;
+// ...
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -30,6 +34,12 @@ public class ConnectionsFragment extends Fragment {
                 textView.setText(s);
             }
         });
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
         return root;
     }
+
+
+
 }
