@@ -9,7 +9,7 @@ public class ForumsViewModel extends ViewModel {
     private MutableLiveData<String> mText;
 
     public ForumsViewModel() {
-        mText = new MutableLiveData<>();
+        //mText = new MutableLiveData<>();
         //mText.setValue("This is the 'Forums' fragment");
     }
 
