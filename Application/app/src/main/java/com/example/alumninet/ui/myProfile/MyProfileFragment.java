@@ -2,6 +2,7 @@ package com.example.alumninet.ui.myProfile;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,15 +17,24 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.alumninet.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
+
+import java.util.Random;
 
 public class MyProfileFragment extends Fragment {
 
     private MyProfileViewModel myProfileViewModel;
-
+    //private DatabaseReference mDatabase;
+    // ...
+    //mDatabase = FirebaseDatabase.getInstance().getReference();
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         myProfileViewModel =
@@ -41,6 +51,23 @@ public class MyProfileFragment extends Fragment {
             }
         });*/
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        /*UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                .setDisplayName("Jorge Quezada")
+                .setPhotoUri(Uri.parse("https://media-exp1.licdn.com/dms/image/C4E03AQGcupC9JPgitw/profile-displayphoto-shrink_200_200/0?e=1592438400&v=beta&t=dvcMfY-DnUawpaLs30S7uOmeLvCbtQ5p5yVK7cawapU"))
+                .build();
+
+        user.updateProfile(profileUpdates)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    private static final String TAG = "Random";
+
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, "User profile updated.");
+                        }
+                    }
+                });*/
         if (user != null) {
             // Name, email address, and profile photo Url
             String name = user.getDisplayName();
@@ -55,13 +82,9 @@ public class MyProfileFragment extends Fragment {
             // FirebaseUser.getIdToken() instead.
             String uid = user.getUid();
             //Get userName to user profile...
-            if(email==null){
-                email = "Wrong email bub";
-                userName.setText(email);
-            }
-            //userName.setText(name); Add after initialized
+            userName.setText(name); //Add after initialized
             userEmail.setText(email);
-            //userImage.setImageURI(photoUrl);
+            userImage.setImageURI(photoUrl);
 
         }
         return root;
