@@ -12,20 +12,20 @@
         "source": "C:\\Users\\green\\OneDrive\\Documents\\GitHub\\AlumniNet\\Application\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\green\\OneDrive\\Documents\\GitHub\\AlumniNet\\Application\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_aluminetlogo.png.flat",
-        "source": "C:\\Users\\green\\OneDrive\\Documents\\GitHub\\AlumniNet\\Application\\app\\src\\main\\res\\mipmap-hdpi\\aluminetlogo.png"
+        "merged": "C:\\Users\\green\\OneDrive\\Documents\\GitHub\\AlumniNet\\Application\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_alumninetlogo.png.flat",
+        "source": "C:\\Users\\green\\OneDrive\\Documents\\GitHub\\AlumniNet\\Application\\app\\src\\main\\res\\mipmap-xxxhdpi\\alumninetlogo.png"
     },
     {
         "merged": "C:\\Users\\green\\OneDrive\\Documents\\GitHub\\AlumniNet\\Application\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_forum_black_24dp.xml.flat",
         "source": "C:\\Users\\green\\OneDrive\\Documents\\GitHub\\AlumniNet\\Application\\app\\src\\main\\res\\drawable\\ic_forum_black_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\green\\OneDrive\\Documents\\GitHub\\AlumniNet\\Application\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\green\\OneDrive\\Documents\\GitHub\\AlumniNet\\Application\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "C:\\Users\\green\\OneDrive\\Documents\\GitHub\\AlumniNet\\Application\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\green\\OneDrive\\Documents\\GitHub\\AlumniNet\\Application\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\green\\OneDrive\\Documents\\GitHub\\AlumniNet\\Application\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\green\\OneDrive\\Documents\\GitHub\\AlumniNet\\Application\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\green\\OneDrive\\Documents\\GitHub\\AlumniNet\\Application\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",

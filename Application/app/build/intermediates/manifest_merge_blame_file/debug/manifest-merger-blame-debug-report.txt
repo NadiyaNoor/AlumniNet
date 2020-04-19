@@ -46,18 +46,18 @@
 28        android:testOnly="true"
 29        android:theme="@style/AppTheme" >
 29-->C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:12:9-40
-30        <activity android:name="com.example.alumninet.LoginActivity" />
-30-->C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:13:9-50
-30-->C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:13:19-48
+30        <activity android:name="com.example.alumninet.MainActivity" />
+30-->C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:13:9-49
+30-->C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:13:19-47
 31        <activity
 31-->C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:14:9-16:60
 32            android:name="com.example.alumninet.NavBar"
 32-->C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:15:13-35
 33            android:label="@string/title_activity_navbar" />
 33-->C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:16:13-58
-34        <activity android:name="com.example.alumninet.MainActivity" >
+34        <activity android:name="com.example.alumninet.LoginActivity" >
 34-->C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:17:9-23:20
-34-->C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:17:19-47
+34-->C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:17:19-48
 35            <intent-filter>
 35-->C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:18:13-22:29
 36                <action android:name="android.intent.action.MAIN" />

@@ -34,46 +34,50 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
-
-   private EditText emailID, password, username, name;
+    //Variables to get
+    private EditText emailID, password, username, name;
     private TextView bio;
-
-    private Spinner Drop1;
-    private Spinner Drop2;
-    private Spinner Drop3;
+    private Spinner Drop1, Drop2, Drop3;
     private ProgressDialog loadingBar;
-    private FirebaseAuth mAuth;
+    //Database authentication/ creation of user variables
     private DatabaseReference UsersRef;
-   // private FirebaseUser FBUser;
+    public String UID;
+    private FirebaseAuth mFirebaseAuth;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       //FirebaseUser FBUser = FirebaseAuth.getInstance().getCurrentUser();
-     // String currentUserId = FBUser.getUid();
-        mAuth = FirebaseAuth.getInstance();
-        String uid = UUID.randomUUID().toString();
+        
 
-        UsersRef = FirebaseDatabase.getInstance().getReference("Users").child(uid);
         emailID = findViewById(R.id.email);
         password = findViewById(R.id.password);
         username = findViewById(R.id.username);
         name = findViewById(R.id.name);
         bio = findViewById(R.id.bio);
-        Button btnSignUp = findViewById(R.id.signupbutton);
-        TextView tvLogIn = findViewById(R.id.loginbutton);
-        loadingBar = new ProgressDialog(this);
         Drop1 = findViewById(R.id.drop1);
         Drop2 = findViewById(R.id.drop2);
         Drop3 = findViewById(R.id.drop3);
+
+        loadingBar = new ProgressDialog(this);
+
+        Button btnSignUp = findViewById(R.id.signupbutton);
+        TextView tvLogIn = findViewById(R.id.loginbutton);
+
+        mFirebaseAuth = FirebaseAuth.getInstance();
+
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-
-
                 String email = emailID.getText().toString();
                 String pwd = password.getText().toString();
 
@@ -83,24 +87,20 @@ public class MainActivity extends AppCompatActivity {
                 } else if (pwd.isEmpty()) {
                     password.setError("Please enter your password");
                     password.requestFocus();
-                } else if (email.isEmpty() && pwd.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Fields Are Empty!", Toast.LENGTH_SHORT).show();
-                } else if (!(email.isEmpty() && pwd.isEmpty())) {
-                    mAuth.createUserWithEmailAndPassword(email, pwd).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+                } else {
+                    mFirebaseAuth.createUserWithEmailAndPassword(email, pwd).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (!task.isSuccessful()) {
-                                Toast.makeText(MainActivity.this, "SignUp Unsuccessful, Please Try Again", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Please enter a valid email address & password using 8 characters or more. ", Toast.LENGTH_SHORT).show();
 
                             } else {
+
                                 SaveAccountSetupInformation();
-                                startActivity(new Intent(MainActivity.this, NavBar.class));
+
                             }
                         }
                     });
-
-                } else {
-                    Toast.makeText(MainActivity.this, "Error Occurred!", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -110,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
         tvLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent i = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(i);
             }
@@ -118,6 +117,22 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
+
+                if(mFirebaseUser != null) {
+                    String UID = mFirebaseUser.getUid();
+                    UsersRef = FirebaseDatabase.getInstance().getReference("Users").child(UID);
+
+                }
+                else{
+                    Toast.makeText(MainActivity.this,"Please Sign Up", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        };
 
     }
 
@@ -151,7 +166,6 @@ public class MainActivity extends AppCompatActivity {
             userMap.put("interest3", Drop3.getSelectedItem().toString());
 
 
-
             UsersRef.updateChildren(userMap).addOnCompleteListener((OnCompleteListener<Void>) task -> {
                 if(task.isSuccessful()){
                     Toast.makeText(MainActivity.this, "Your Account has been successfully created... ", Toast.LENGTH_LONG).show();
@@ -171,13 +185,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void SendUserToMainActivity() {
+     private void SendUserToMainActivity() {
         Intent j = new Intent(MainActivity.this,NavBar.class);
         j.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(j);
         finish();
     }
-
-
-
 }

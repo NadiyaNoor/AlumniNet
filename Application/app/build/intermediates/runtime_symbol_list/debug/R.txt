@@ -1401,7 +1401,7 @@ int layout select_dialog_multichoice_material 0x7f0c0039
 int layout select_dialog_singlechoice_material 0x7f0c003a
 int layout support_simple_spinner_dropdown_item 0x7f0c003b
 int menu bottom_nav_menu 0x7f0d0000
-int mipmap aluminetlogo 0x7f0e0000
+int mipmap alumninetlogo 0x7f0e0000
 int mipmap ic_launcher 0x7f0e0001
 int mipmap ic_launcher_round 0x7f0e0002
 int navigation mobile_navigation 0x7f0f0000

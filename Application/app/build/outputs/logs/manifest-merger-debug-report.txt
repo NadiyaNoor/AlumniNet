@@ -166,20 +166,20 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\green\.gradle\
 		ADDED from C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:8:9-43
 	android:theme
 		ADDED from C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:12:9-40
-activity#com.example.alumninet.LoginActivity
-ADDED from C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:13:9-50
+activity#com.example.alumninet.MainActivity
+ADDED from C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:13:9-49
 	android:name
-		ADDED from C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:13:19-48
+		ADDED from C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:13:19-47
 activity#com.example.alumninet.NavBar
 ADDED from C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:14:9-16:60
 	android:label
 		ADDED from C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:16:13-58
 	android:name
 		ADDED from C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:15:13-35
-activity#com.example.alumninet.MainActivity
+activity#com.example.alumninet.LoginActivity
 ADDED from C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:17:9-23:20
 	android:name
-		ADDED from C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:17:19-47
+		ADDED from C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:17:19-48
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\green\OneDrive\Documents\GitHub\AlumniNet\Application\app\src\main\AndroidManifest.xml:18:13-22:29
 action#android.intent.action.MAIN
