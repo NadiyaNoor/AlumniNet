@@ -15,6 +15,13 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
+anim fragment_close_enter
+anim fragment_close_exit
+anim fragment_fade_enter
+anim fragment_fade_exit
+anim fragment_fast_out_extra_slow_in
+anim fragment_open_enter
+anim fragment_open_exit
 anim nav_default_enter_anim
 anim nav_default_exit_anim
 anim nav_default_pop_enter_anim
@@ -1095,6 +1102,39 @@ id FUNCTION
 id META
 id SHIFT
 id SYM
+id accessibility_action_clickable_span
+id accessibility_custom_action_0
+id accessibility_custom_action_1
+id accessibility_custom_action_10
+id accessibility_custom_action_11
+id accessibility_custom_action_12
+id accessibility_custom_action_13
+id accessibility_custom_action_14
+id accessibility_custom_action_15
+id accessibility_custom_action_16
+id accessibility_custom_action_17
+id accessibility_custom_action_18
+id accessibility_custom_action_19
+id accessibility_custom_action_2
+id accessibility_custom_action_20
+id accessibility_custom_action_21
+id accessibility_custom_action_22
+id accessibility_custom_action_23
+id accessibility_custom_action_24
+id accessibility_custom_action_25
+id accessibility_custom_action_26
+id accessibility_custom_action_27
+id accessibility_custom_action_28
+id accessibility_custom_action_29
+id accessibility_custom_action_3
+id accessibility_custom_action_30
+id accessibility_custom_action_31
+id accessibility_custom_action_4
+id accessibility_custom_action_5
+id accessibility_custom_action_6
+id accessibility_custom_action_7
+id accessibility_custom_action_8
+id accessibility_custom_action_9
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1127,6 +1167,7 @@ id beginning
 id bio
 id blocking
 id bottom
+id btnAddComment
 id buttonPanel
 id center
 id center_horizontal
@@ -1137,6 +1178,9 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id comment_content
+id comment_date
+id comment_username
 id container
 id content
 id contentPanel
@@ -1144,19 +1188,24 @@ id coordinator
 id custom
 id customPanel
 id dark
+id date
 id decor_content_parent
 id default_activity_button
+id description
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id dialog_button
 id dimensions
 id direct
 id disableHome
 id drop1
 id drop2
 id drop3
+id editProfile
+id editTextComment
 id edit_query
 id email
 id end
@@ -1170,7 +1219,10 @@ id fill_horizontal
 id fill_vertical
 id filled
 id fixed
+id floatingActionButton
 id forever
+id forumList
+id fragment_container_view_tag
 id ghost_view
 id gone
 id group_divider
@@ -1194,6 +1246,7 @@ id left
 id light
 id line1
 id line3
+id linearLayout
 id listMode
 id list_item
 id loginbutton
@@ -1243,6 +1296,7 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id scrollView2
 id scrollable
 id search_badge
 id search_bar
@@ -1279,6 +1333,11 @@ id stretch
 id submenuarrow
 id submit_area
 id tabMode
+id tag_accessibility_actions
+id tag_accessibility_clickable_spans
+id tag_accessibility_heading
+id tag_accessibility_pane_title
+id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
@@ -1287,13 +1346,9 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView
 id text_connections
-id text_forum
-id text_forum2
-id text_forum3
-id text_forum4
 id text_input_password_toggle
-id text_my_profile
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -1314,9 +1369,13 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id userEmail
+id userImage
+id userName
 id username
 id view_offset_helper
 id visible
+id visible_removing_fragment_view_tag
 id wide
 id withText
 id wrap
@@ -1369,9 +1428,13 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_comment_item
+layout activity_forum_item
+layout activity_forums
 layout activity_login
 layout activity_main
 layout activity_navbar
+layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1402,6 +1465,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu bottom_nav_menu
+mipmap alumi_net_logo
 mipmap alumninetlogo
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -1486,6 +1550,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string profile_picture_description
 string project_id
 string search_menu_title
 string status_bar_notification_info_overflow
@@ -1493,6 +1558,7 @@ string title_activity_navbar
 string title_connections
 string title_forums
 string title_my_profile
+string vertical_ellipsis
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -2032,6 +2098,8 @@ styleable FlowLayout itemSpacing lineSpacing
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
+styleable Fragment android_name android_id android_tag
+styleable FragmentContainerView android_name android_tag
 styleable FragmentNavigator android_name
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
