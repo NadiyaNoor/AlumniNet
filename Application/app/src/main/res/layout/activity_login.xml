@@ -73,3 +73,4 @@
         app:srcCompat="@mipmap/alumninetlogo"
         tools:srcCompat="@mipmap/alumninetlogo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+

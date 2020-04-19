@@ -37,4 +37,7 @@
 
     </string-array>
 
+    <string name="vertical_ellipsis">&#8942;</string>
+    <string name="profile_picture_description">Profile picture</string>
+  
 </resources>
