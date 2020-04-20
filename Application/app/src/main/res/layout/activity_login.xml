@@ -70,6 +70,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.031"
-        app:srcCompat="@mipmap/alumi_net_logo"
-        tools:srcCompat="@mipmap/alumi_net_logo" />
+        app:srcCompat="@mipmap/alumninetlogo"
+        tools:srcCompat="@mipmap/alumninetlogo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+

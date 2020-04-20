@@ -43,6 +43,8 @@ protected void onCreate(Bundle savedInstanceState) {
                         FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
 
                         if(mFirebaseUser != null) {
+
+
                                 Toast.makeText(LoginActivity.this,"You are logged in", Toast.LENGTH_SHORT).show();
                                 Intent i = new Intent (LoginActivity.this, NavBar.class);
                                 startActivity(i);
@@ -62,7 +64,7 @@ protected void onCreate(Bundle savedInstanceState) {
                         String email = emailID.getText().toString();
                         String pwd = password.getText().toString();
                         if (email.isEmpty()) {
-                                emailID.setError("Please enter your email id");
+                                emailID.setError("Please enter your email address");
                                 emailID.requestFocus();
                         }
                         else if (pwd.isEmpty()) {
@@ -108,7 +110,7 @@ protected void onCreate(Bundle savedInstanceState) {
         @Override
         protected void onStart() {
                 super.onStart();
-mFirebaseAuth.addAuthStateListener(mAuthStateListener);
+        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
 
         }
 
