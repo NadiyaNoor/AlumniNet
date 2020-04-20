@@ -7,6 +7,7 @@
     tools:context=".ForumsActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -25,8 +26,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="10dp"
             android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"/>
 
         <TextView
             android:id="@+id/date"
@@ -38,7 +48,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@color/colorPrimary"
             android:orientation="horizontal">
 
             <EditText
@@ -56,9 +68,20 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:layout_weight="1"
+                android:background="@color/colorButton"
                 android:fadingEdge="none"
                 android:text="Add" />
+
         </LinearLayout>
+
+        <ListView
+            android:id="@+id/rv_comment"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_margin="8dp">
+
+        </ListView>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
