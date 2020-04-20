@@ -1,5 +1,6 @@
 package com.example.alumninet.ui.connections;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.alumninet.Connection;
+import com.example.alumninet.ConnectionsActivity;
 import com.example.alumninet.ConnectionAdapter;
 import com.example.alumninet.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,6 +35,7 @@ public class ConnectionsFragment extends Fragment {
     ArrayList<String> fullnameList = new ArrayList<>();
     ArrayList<String> usernameList = new ArrayList<>();
     ArrayList<String> emailList = new ArrayList<>();
+    ArrayList<String> uidList = new ArrayList<>();
     ArrayList<String> interest1List = new ArrayList<>();
     ArrayList<String> interest2List = new ArrayList<>();
     ArrayList<String> interest3List = new ArrayList<>();
@@ -49,7 +52,7 @@ public class ConnectionsFragment extends Fragment {
 
         listView = root.findViewById(R.id.connectionsList);
         arrayAdapter = new ConnectionAdapter(getActivity(), fullnameList, usernameList,
-                emailList, interest1List, interest2List, interest3List, bioList);
+                emailList);//, interest1List, interest2List, interest3List, bioList);
         listView.setAdapter(arrayAdapter);
 
         databaseReference.addChildEventListener(new ChildEventListener() {
@@ -58,6 +61,7 @@ public class ConnectionsFragment extends Fragment {
                 String fullname = dataSnapshot.getValue(Connection.class).getFullname();
                 String username = dataSnapshot.getValue(Connection.class).getUsername();
                 String email = dataSnapshot.getValue(Connection.class).getEmail();
+                String uid = dataSnapshot.getKey().toString();
                 String interest1 = dataSnapshot.getValue(Connection.class).getInterest1();
                 String interest2 = dataSnapshot.getValue(Connection.class).getInterest2();
                 String interest3 = dataSnapshot.getValue(Connection.class).getInterest3();
@@ -65,6 +69,7 @@ public class ConnectionsFragment extends Fragment {
                 fullnameList.add(fullname);
                 usernameList.add(username);
                 emailList.add(email);
+                uidList.add(uid);
                 interest1List.add(interest1);
                 interest2List.add(interest2);
                 interest3List.add(interest3);
@@ -78,14 +83,15 @@ public class ConnectionsFragment extends Fragment {
                 String fullname = dataSnapshot.getValue(Connection.class).getFullname();
                 String username = dataSnapshot.getValue(Connection.class).getUsername();
                 String email = dataSnapshot.getValue(Connection.class).getEmail();
+                String uid = dataSnapshot.getKey().toString();
                 String interest1 = dataSnapshot.getValue(Connection.class).getInterest1();
                 String interest2 = dataSnapshot.getValue(Connection.class).getInterest2();
                 String interest3 = dataSnapshot.getValue(Connection.class).getInterest3();
                 String bio = dataSnapshot.getValue(Connection.class).getBio();
-
                 fullnameList.add(fullname);
                 usernameList.add(username);
                 emailList.add(email);
+                uidList.add(uid);
                 interest1List.add(interest1);
                 interest2List.add(interest2);
                 interest3List.add(interest3);
@@ -116,19 +122,21 @@ public class ConnectionsFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
 
-                /*Toast.makeText(getContext(),
-                        "You Clicked: " +  listView.getItemAtPosition(position), Toast.LENGTH_LONG)
-                        .show();*/
                 Toast.makeText(getContext(),
                         "You Clicked: " + fullnameList.get(position), Toast.LENGTH_LONG)
                         .show();
 
-//                Intent intent = new Intent(getActivity(), ConnectionActivity.class);
-//
-//                intent.putExtra("Fullname", fullnameList.get(position));
-//                intent.putExtra("Username", usernameList.get(position));
-//                intent.putExtra("Email", emailList.get(position));
-//                startActivity(intent);
+                Intent intent = new Intent(getActivity(), ConnectionsActivity.class);
+
+                intent.putExtra("Fullname", fullnameList.get(position));
+                intent.putExtra("Username", usernameList.get(position));
+                intent.putExtra("Email", emailList.get(position));
+                intent.putExtra("Uid", uidList.get(position));
+                intent.putExtra("Interest1", interest1List.get(position));
+                intent.putExtra("Interest2", interest2List.get(position));
+                intent.putExtra("Interest3", interest3List.get(position));
+                intent.putExtra("Bio", bioList.get(position));
+                startActivity(intent);
 
             }
         });
