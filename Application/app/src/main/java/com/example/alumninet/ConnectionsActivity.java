@@ -55,7 +55,7 @@ public class ConnectionsActivity extends AppCompatActivity {
 
         fullname.setText(fullnameText);
         username.setText(usernameText);
-        email.setText("Email me at: " + emailText);
+        email.setText(emailText);
         interest1.setText(interest1Text);
         interest2.setText(interest2Text);
         interest3.setText(interest3Text);

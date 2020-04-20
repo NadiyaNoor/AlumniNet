@@ -34,16 +34,7 @@ private FirebaseAuth.AuthStateListener mAuthStateListener;
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-        btnLogout = findViewById(R.id.logoffbutton);
 
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent inToMain = new Intent(NavBar.this, MainActivity.class);
-                startActivity(inToMain);
-            }
-        });
     }
 
 }

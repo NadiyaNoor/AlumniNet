@@ -66,16 +66,18 @@ public class ConnectionsFragment extends Fragment {
                 String interest2 = dataSnapshot.getValue(Connection.class).getInterest2();
                 String interest3 = dataSnapshot.getValue(Connection.class).getInterest3();
                 String bio = dataSnapshot.getValue(Connection.class).getBio();
-                fullnameList.add(fullname);
-                usernameList.add(username);
-                emailList.add(email);
-                uidList.add(uid);
-                interest1List.add(interest1);
-                interest2List.add(interest2);
-                interest3List.add(interest3);
-                bioList.add(bio);
+                if (!uid.equals(firebaseUser.getUid())) {
+                    fullnameList.add(fullname);
+                    usernameList.add(username);
+                    emailList.add(email);
+                    uidList.add(uid);
+                    interest1List.add(interest1);
+                    interest2List.add(interest2);
+                    interest3List.add(interest3);
+                    bioList.add(bio);
 
-                arrayAdapter.notifyDataSetChanged();
+                    arrayAdapter.notifyDataSetChanged();
+                }
             }
 
             @Override

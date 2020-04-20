@@ -128,24 +128,24 @@ public class ForumsActivity extends AppCompatActivity {
         // commentAdapter.notifyDataSetChanged();
         commentReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot key : dataSnapshot.getChildren()) {
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot key : dataSnapshot.getChildren()) {
 
-                    //for (DataSnapshot item : key.getChildren()) {
+                        //for (DataSnapshot item : key.getChildren()) {
 
-                    String comment = key.child("comment").getValue(String.class);
-                    String date = key.child("date").getValue(String.class);
-                    String username = key.child("username").getValue(String.class);
-                    // String date = item.getValue().toString();
-                    //String username = item.getValue(Comment.class).getUid();
-                    //for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    //dataSnapshot.getChildren();
-                    //commentReference.getKey();
-                    commentList.add(comment);
-                    dateList.add(date);
-                    usernameList.add(username);
-                    //}
-                }
+                        String comment = key.child("comment").getValue(String.class);
+                        String date = key.child("date").getValue(String.class);
+                        String username = key.child("username").getValue(String.class);
+                        // String date = item.getValue().toString();
+                        //String username = item.getValue(Comment.class).getUid();
+                        //for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                        //dataSnapshot.getChildren();
+                        //commentReference.getKey();
+                        commentList.add(comment);
+                        dateList.add(date);
+                        usernameList.add(username);
+                        //}
+                    }
 //                String comment = dataSnapshot.getValue(Comment.class).getComment();
 //                String date = dataSnapshot.getValue(Comment.class).getDate();
 //                String username = dataSnapshot.getValue(Comment.class).getUid();
