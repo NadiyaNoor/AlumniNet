@@ -1071,7 +1071,9 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_bookmark_black_24dp
 drawable ic_dashboard_black_24dp
+drawable ic_email_black_24dp
 drawable ic_forum_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1079,6 +1081,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_person_black_24dp
+drawable ic_settings_black_24dp
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1181,6 +1184,7 @@ id collapseActionView
 id comment_content
 id comment_date
 id comment_username
+id connectionsList
 id container
 id content
 id contentPanel
@@ -1204,7 +1208,6 @@ id disableHome
 id drop1
 id drop2
 id drop3
-id editProfile
 id editTextComment
 id edit_query
 id email
@@ -1223,6 +1226,7 @@ id floatingActionButton
 id forever
 id forumList
 id fragment_container_view_tag
+id fullname
 id ghost_view
 id gone
 id group_divider
@@ -1236,7 +1240,14 @@ id ifRoom
 id image
 id imageView
 id imageView2
+id imageView3
+id imageView4
+id imageView5
+id imageView6
 id info
+id interest1
+id interest2
+id interest3
 id invisible
 id italic
 id item_touch_helper_previous_elevation
@@ -1247,6 +1258,7 @@ id light
 id line1
 id line3
 id linearLayout
+id linearLayout2
 id listMode
 id list_item
 id loginbutton
@@ -1288,6 +1300,8 @@ id radio
 id right
 id right_icon
 id right_side
+id rv_comment
+id save
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1296,7 +1310,6 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
-id scrollView2
 id scrollable
 id search_badge
 id search_bar
@@ -1310,6 +1323,7 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id settings
 id shortcut
 id showCustom
 id showHome
@@ -1346,8 +1360,9 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
-id textView
-id text_connections
+id textView2
+id textView3
+id textView4
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1369,9 +1384,6 @@ id uniform
 id unlabeled
 id up
 id useLogo
-id userEmail
-id userImage
-id userName
 id username
 id view_offset_helper
 id visible
@@ -1429,6 +1441,9 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_comment_item
+layout activity_connection_item
+layout activity_connection_profile
+layout activity_edit_profile
 layout activity_forum_item
 layout activity_forums
 layout activity_login
