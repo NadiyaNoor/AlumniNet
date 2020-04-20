@@ -42,11 +42,13 @@ public class ForumListAdapter extends ArrayAdapter<String> {
 
         TextView titleText = (TextView) rowView.findViewById(R.id.title);
         TextView descriptionText = (TextView) rowView.findViewById(R.id.description);
-        TextView username = (TextView) rowView.findViewById(R.id.date);
+        TextView username = (TextView) rowView.findViewById(R.id.username);
+        TextView date = (TextView) rowView.findViewById(R.id.date);
 
         titleText.setText(titleList.get(position));
         descriptionText.setText(descriptionList.get(position));
-        username.setText("Posted By: " + usernameList.get(position) + "\n" + dateList.get(position));
+        username.setText(usernameList.get(position));
+        date.setText(dateList.get(position));
 
         return rowView;
 
