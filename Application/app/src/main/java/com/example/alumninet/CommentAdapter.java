@@ -1,37 +1,59 @@
 package com.example.alumninet;
 
+import android.app.Activity;
 import android.content.Context;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.ValueEventListener;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentViewHolder> {
+public class CommentAdapter extends ArrayAdapter<String> {
+    Activity context;
+    //private Context mContext;
+    ArrayList<String> commentList = new ArrayList<>();
+    ArrayList<String> dateList = new ArrayList<>();
+    ArrayList<String> usernameList = new ArrayList<>();
+    //private ArrayList<Comment> mData;
 
-    private Context mContext;
-    private List<Comment> mData;
+    TextView tv_name,tv_content,tv_date;
 
-
-    public CommentAdapter(Context mContext, List<Comment> mData) {
-        this.mContext = mContext;
-        this.mData = mData;
+    public CommentAdapter(Activity context, ArrayList<String> commentList, ArrayList<String> dateList,
+                          ArrayList<String> usernameList) {
+        super(context, R.layout.activity_comment_item, commentList);
+        this.context = context;
+        this.commentList = commentList;
+        this.dateList = dateList;
+        this.usernameList = usernameList;
     }
 
-    @NonNull
-    @Override
-    public CommentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View row = LayoutInflater.from(mContext).inflate(R.layout.activity_comment_item,parent,false);
-        return new CommentViewHolder(row);
-    }
+    public View getView(int position, View view, ViewGroup parent) {
+        LayoutInflater inflater = context.getLayoutInflater();
+        View row = inflater.inflate(R.layout.activity_comment_item,parent,false);
 
+        tv_name = row.findViewById(R.id.comment_username);
+        tv_content = row.findViewById(R.id.comment_content);
+        tv_date = row.findViewById(R.id.comment_date);
+
+        tv_name.setText(usernameList.get(position));
+        tv_content.setText(commentList.get(position));
+        tv_date.setText(dateList.get(position));
+
+        return row;
+    }
+/*
     @Override
     public void onBindViewHolder(@NonNull CommentViewHolder holder, int position) {
 
@@ -57,17 +79,19 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
         }
     }
 
+ */
 
 
-    private String timestampToString(long time) {
-
-        Calendar calendar = Calendar.getInstance(Locale.ENGLISH);
-        calendar.setTimeInMillis(time);
-        String date = DateFormat.format("hh:mm",calendar).toString();
-        return date;
-
-
-    }
+//
+//    private String timestampToString(long time) {
+//
+//        Calendar calendar = Calendar.getInstance(Locale.ENGLISH);
+//        calendar.setTimeInMillis(time);
+//        String date = DateFormat.format("hh:mm",calendar).toString();
+//        return date;
+//
+//
+//    }
 
 
 }

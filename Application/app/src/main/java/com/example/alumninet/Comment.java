@@ -1,31 +1,21 @@
 package com.example.alumninet;
 
-import com.google.firebase.database.ServerValue;
-
 public class Comment {
-    private String content, uid, uname;
-    private Object timestamp;
+    private String content;
+    private String username;
+    private String date;
 
 
     public Comment() {
     }
 
-    public Comment(String content, String uid, String uname) {
+    public Comment(String content, String username, String date) {
         this.content = content;
-        this.uid = uid;
-        this.uname = uname;
-        this.timestamp = ServerValue.TIMESTAMP;
-
+        this.username = username;
+        this.date = date;
     }
 
-    public Comment(String content, String uid, String uname, Object timestamp) {
-        this.content = content;
-        this.uid = uid;
-        this.uname = uname;
-        this.timestamp = timestamp;
-    }
-
-    public String getContent() {
+    public String getComment() {
         return content;
     }
 
@@ -33,27 +23,19 @@ public class Comment {
         this.content = content;
     }
 
-    public String getUid() {
-        return uid;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
+    public void setUsername(String uid) {
+        this.username = uid;
     }
 
-    public String getUname() {
-        return uname;
+    public String getDate() {
+        return date;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname;
-    }
-
-    public Object getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Object timestamp) {
-        this.timestamp = timestamp;
+    public void setDate(Object timestamp) {
+        this.date = date;
     }
 }
