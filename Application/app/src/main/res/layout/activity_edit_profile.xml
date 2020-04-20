@@ -35,33 +35,36 @@
             android:layout_height="match_parent"
             app:srcCompat="@drawable/ic_person_black_24dp" />
 
-        <TextView
+        <EditText
             android:id="@+id/fullname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_marginRight="30dp"
+            android:hint="Full Name"
             android:textSize="24sp"
             android:textStyle="bold" />
     </LinearLayout>
 
-    <TextView
+    <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:layout_marginLeft="80dp"
         android:layout_marginBottom="30dp"
+        android:hint="Username"
         android:textSize="18sp" />
 
-    <TextView
+    <EditText
         android:id="@+id/bio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:layout_marginBottom="100dp"
-        android:textSize="18sp"
         android:layout_marginLeft="80dp"
+        android:layout_marginBottom="100dp"
+        android:hint="Bio"
+        android:textSize="18sp"
         android:textStyle="italic" />
 
     <TextView
@@ -118,38 +121,42 @@
             android:textSize="18sp" />
     </LinearLayout>
 
-    <TextView
+    <Spinner
         android:id="@+id/interest1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="8dp"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:entries="@array/my_array"/>
 
-    <TextView
+    <Spinner
         android:id="@+id/interest2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="8dp"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:entries="@array/my_array"/>
 
-    <TextView
+    <Spinner
         android:id="@+id/interest3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="8dp"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:entries="@array/my_array"/>
 
     <Button
-        android:id="@+id/logoffbutton"
+        android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Logout"
+        android:text="Save"
         android:layout_gravity="bottom|end" />
+
 
 </LinearLayout>
