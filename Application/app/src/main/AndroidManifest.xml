@@ -11,22 +11,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity
-            android:name=".ForumsActivity"
-            android:parentActivityName=".NavBar" />
+        <activity android:name=".ForumsActivity"
+            android:parentActivityName=".NavBar"></activity>
+        <activity android:name=".ConnectionsActivity"
+            android:parentActivityName=".NavBar"></activity>
 
-        <activity
-            android:name=".ConnectionsActivity"
-            android:parentActivityName=".NavBar" />
-
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".MainActivity"/>
 
         <activity
             android:name=".NavBar"
-            android:label="@string/title_activity_navbar" />
+            android:label="@string/title_activity_navbar"/>
 
-        <activity android:name=".MainActivity">
-
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,5 +30,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
