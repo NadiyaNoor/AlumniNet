@@ -26,12 +26,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ConnectionsFragment extends Fragment {
 
     ListView listView;
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+
     ArrayList<String> fullnameList = new ArrayList<>();
     ArrayList<String> usernameList = new ArrayList<>();
     ArrayList<String> emailList = new ArrayList<>();
@@ -41,9 +43,16 @@ public class ConnectionsFragment extends Fragment {
     ArrayList<String> interest3List = new ArrayList<>();
     ArrayList<String> bioList = new ArrayList<>();
 
+
     ArrayAdapter<String> arrayAdapter;
     FirebaseAuth firebaseAuth = firebaseAuth = FirebaseAuth.getInstance();
     FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+
+    DatabaseReference currentUser = FirebaseDatabase.getInstance().getReference("Users/"
+            + firebaseUser.getUid());
+
+    static ArrayList<String> in = new ArrayList<>();
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -55,7 +64,45 @@ public class ConnectionsFragment extends Fragment {
                 emailList);//, interest1List, interest2List, interest3List, bioList);
         listView.setAdapter(arrayAdapter);
 
+        currentUser.addChildEventListener(new ChildEventListener() {
+
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                if (dataSnapshot.getKey().equals("interest1") || dataSnapshot.getKey().equals("interest2") ||
+                        dataSnapshot.getKey().equals("interest3")) {
+                    String interest = dataSnapshot.getValue(String.class);
+
+                    in.add(interest);
+
+                }
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+        //databaseReference.orderByChild("interest").equalTo().addChildEventListener(new ChildEventListener() {
         databaseReference.addChildEventListener(new ChildEventListener() {
+
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 String fullname = dataSnapshot.getValue(Connection.class).getFullname();
@@ -66,17 +113,21 @@ public class ConnectionsFragment extends Fragment {
                 String interest2 = dataSnapshot.getValue(Connection.class).getInterest2();
                 String interest3 = dataSnapshot.getValue(Connection.class).getInterest3();
                 String bio = dataSnapshot.getValue(Connection.class).getBio();
-                if (!uid.equals(firebaseUser.getUid())) {
-                    fullnameList.add(fullname);
-                    usernameList.add(username);
-                    emailList.add(email);
-                    uidList.add(uid);
-                    interest1List.add(interest1);
-                    interest2List.add(interest2);
-                    interest3List.add(interest3);
-                    bioList.add(bio);
 
-                    arrayAdapter.notifyDataSetChanged();
+                if (!uid.equals(firebaseUser.getUid())) {
+
+                    if (in.contains(interest1) || in.contains(interest2) || in.contains(interest1)) {
+                        fullnameList.add(fullname);
+                        usernameList.add(username);
+                        emailList.add(email);
+                        uidList.add(uid);
+                        interest1List.add(interest1);
+                        interest2List.add(interest2);
+                        interest3List.add(interest3);
+                        bioList.add(bio);
+
+                        arrayAdapter.notifyDataSetChanged();
+                    }
                 }
             }
 
@@ -145,6 +196,5 @@ public class ConnectionsFragment extends Fragment {
 
         return root;
     }
-
 
 }
